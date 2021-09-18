@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'fuente';
+    src: url(WorkSans-VariableFont_wght.ttf);
+}
+p {
+    background: linear-gradient(to left,#3106BB,#EA2EFF);
+    color: #EA2EFF;
+}
+body{
+    min-height: 100vh;
+    margin: 20;
+    background: radial-gradient(ellipse at 50% 50%,#962EFF ,#09070F 60%);
+    color: white;
+}
+.caja{
+    background: white;
+}
+
+.box5{
+    padding: 10px;
+    text-align: center;
+    border-radius:30px;
+    margin: 20px, 20px, 20px, 20px;
+    background-color: rgba(255, 255, 255, .50);
+    color: #09070F;
+}
+.container{
+    Height: 100vh;
+    Display:grid;
+}
+.container{
+    Grid-template-columns: 1fr 60% 1fr;
+    Grid-template-rows:  1fr 70% 1fr;
+}
+.minigrid{
+    margin: 20;
+    Height: 100vh;
+    Display:grid;
+}
+.minigrid{
+    grid-gap: 20px;   
+    Grid-template-columns: 1fr 1fr;
+    Grid-template-rows:  45% 25%;
+}
+.boxa{
+    text-align: center;
+    margin: auto;
+}
+.boxb{
+    text-align: center;
+    margin: auto;
+}
+
+.boxc input[type="submit"] {
+            border: none;
+            outline: none;
+            height: 40px;
+            background: white;
+            color: #962EFF;
+            font-size: 18px;
+            border-radius: 20px;
+            opacity: 100%;
+            width: 130px;
+}
+.boxc input[type="submit"]:hover {
+            cursor: pointer;
+            background: white;
+            color: mediumpurple;
+            }
+.boxd input[type="submit"] {
+            border: none;
+            outline: none;
+            height: 40px;
+            background: white;
+            color: #962EFF;
+            font-size: 18px;
+            border-radius: 20px;
+            width: 130px;
+}
+.boxd input[type="submit"]:hover {
+            cursor: pointer;
+            background: white;
+            color: mediumpurple;
+            }
+.boxa input[type="text"] {
+            border: none;
+            outline: none;
+            height: 40px;
+            background: white;
+            color: purple;
+            font-size: 18px;
+            border-radius: 20px;
+}
+.boxa input[type="text"]:hover {
+            background: white;
+            color: mediumpurple;
+            }
+.boxb input[type="text"] {
+            border: none;
+            outline: none;
+            height: 40px;
+            background: white;
+            color: purple;
+            font-size: 18px;
+            border-radius: 20px;
+}
+.boxb input[type="password"] {
+            border: none;
+            outline: none;
+            height: 40px;
+            background: #fff;
+            color: purple;
+            font-size: 18px;
+            border-radius: 20px;
+}
+.boxb input[type="password"]:hover {
+            background: white;
+            color: mediumpurple;
+            }
+
+.texto{
+    font-family: 'fuente';
+}
+.boxc{
+    margin: auto;
+}
+.boxd{
+    margin: auto;
+
+}
+/*
+.caja{
+    border: none;
+    outline: none;
+    height: 40px;
+    background:#fff;
+    color: purple;
+    font-size: 18px;
+    border-radius: 20px;
+    opacity: 100%;
+}
+*/

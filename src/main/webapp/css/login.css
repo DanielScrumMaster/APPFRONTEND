@@ -1,0 +1,95 @@
+﻿p {
+	background: linear-gradient(to left, #3106BB, #EA2EFF);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: radial-gradient(ellipse at 100% 0%, #3106bb, #09070F 30%);
+	background-size: cover;
+	font-family: sans-serif;
+	height: 100vh;
+}
+
+.inicie_sesion {
+	width: 320px;
+	height: 50px;
+	background-color: #09070F;
+	text-emphasis: unset;
+	text-align: center;
+	color: #D4ECDD;
+	top: 13%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 20px 20px;
+	font-weight: bold;
+	border-radius: 20px;
+}
+
+.iniciar_sesion {
+	width: 320px;
+	height: 420px;
+	background: linear-gradient(to left, #3106BB, #EA2EFF);
+	color: white;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	border-radius: 10px;
+}
+
+.iniciar_sesion label {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	display: block;
+	color: black;
+}
+
+.iniciar_sesion input {
+	width: 100%;
+	margin-bottom: 20px;
+	color: white;
+}
+
+.iniciar_sesion input[type="text"], .iniciar_sesion input[type="password"]
+	{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: white;
+	font-size: 16px;
+}
+
+.iniciar_sesion input[type="submit"] {
+	border: none;
+	outline: none;
+	height: 40px;
+	background: white;
+	color: black;
+	font-size: 18px;
+	border-radius: 20px;
+}
+
+.iniciar_sesion input[type="submit"]:hover {
+	cursor: pointer;
+	background: white;
+	color: black;
+}
+
+.iniciar_sesion a {
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 20px;
+	color: darkgrey;
+}
+
+.iniciar_sesion a:hover {
+	color: white;
+}
