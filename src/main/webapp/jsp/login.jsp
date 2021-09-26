@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Tienda</title>
-    <link rel="stylesheet" href="estilosCSS/login.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
     <p>.</p>
     <div class="contenedor" >
 
         <div class="logo">
-            <img src="imagenes/LOGO.png" alt="Logo">
+            <!-- <img src="imagenes/LOGO.png" alt="Logo"> -->
         </div>
         <div class="titulo">
             <h1>Bienvenido</h1>

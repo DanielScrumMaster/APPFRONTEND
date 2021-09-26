@@ -1,50 +1,51 @@
-body{
+body {
 	font-family: arial, helvetica;
-	background:#09070F;
+	background: #09070F;
 }
-.menu{
+
+.menu {
 	list-style: none;
 	padding: 0;
-	
 	width: 100%;
 	max-width: 10000px;
 	margin: auto;
-
 }
-.menu li a{
+
+.menu li a {
 	text-decoration: none;
 	color: white;
-	padding:20px ;
+	padding: 20px;
 	display: block;
 }
-.menu li{
+
+.menu li {
 	display: inline-block;
 }
-.menu li a:hover{
+
+.menu li a:hover {
 	background: #3106BB;
 	border-radius: 15px;
 }
-.modulo{
+
+.modulo {
 	list-style: none;
 	padding: 0;
 	background: #3106BB;
 	width: 100%;
 	max-width: 10000px;
-  height:80% ;
-  max-height: 80000px
-
-  
+	height: 80%;
+	max-height: 80000px
 }
 
-.modulo{
-  background-image: linear-gradient(to right,#572364,#924ED7);
-  text-align: center
-  
-} 
-.modulo{
-  border-radius: 15px
-  
+.modulo {
+	background-image: linear-gradient(to right, #572364, #924ED7);
+	text-align: center
 }
-p{
-  background : linear-gradient(to left,#EA2EFF,#3106BB);
+
+.modulo {
+	border-radius: 15px
+}
+
+p {
+	background: linear-gradient(to left, #EA2EFF, #3106BB);
 }

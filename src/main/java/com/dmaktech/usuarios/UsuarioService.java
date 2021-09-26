@@ -3,6 +3,7 @@ package com.dmaktech.usuarios;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -41,6 +42,30 @@ public class UsuarioService {
 		return null;
 	}	
 	
+	public boolean crearUsuario(Usuario nuevoUsuario) {
+		
+		try {			
+			url = new URL(baseURL);
+			
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();			
+			connection.setRequestMethod("POST");
+			connection.setRequestProperty("Content-Type", "application/json");
+			connection.setDoOutput(true);
+			
+			String jsonUsuario = mapper.writeValueAsString(nuevoUsuario);			
+			connection.getOutputStream().write(jsonUsuario.getBytes(StandardCharsets.UTF_8));	
+			
+			if(connection.getResponseCode() == HttpURLConnection.HTTP_CREATED)
+				return true;
+			
+			connection.disconnect();		
+			
+		} catch (Exception e) {			
+			e.printStackTrace();
+		}		
+		return false;
+	}
+	
 	public List<Usuario> getUsuarios() {
 		
 		try {			
@@ -51,27 +76,28 @@ public class UsuarioService {
 			
 			return mapper.readValue(connection.getInputStream(), new TypeReference<List<Usuario>>() {});			
 			
-		} catch (Exception e) {
-			// 
+		} catch (Exception e) {			
 			e.printStackTrace();
 		}
 		
 		return null;
 	}
 	
-	public void borrarUsuario(String cedula) {
+	public boolean borrarUsuario(String cedula) {
 		try {
 			url = new URL(baseURL + cedula);
 			
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			
-			connection.setRequestMethod("DELETE");			
+			connection.setRequestMethod("DELETE");	
 			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			if(connection.getResponseCode() == HttpURLConnection.HTTP_OK)
+				return true;
+			
+		} catch (Exception e) {			
 			e.printStackTrace();
 		}
 		
-		
+		return false;
 	}
 }
