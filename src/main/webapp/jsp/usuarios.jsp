@@ -51,6 +51,7 @@
 						<div class="boxb">
 							<br> <label class="texto" for="usuario"> Usuario:</label><br>
 							<br> <br> <br> <label class="texto" for="password">Contraseña</label><br>
+							<br> <br> <br> <label class="mensaje" for="password">*prueba*</label><br>
 
 						</div>
 						<div class="boxb">
