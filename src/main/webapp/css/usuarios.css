@@ -122,6 +122,11 @@ body{
     font-family: 'fuente';
     font-size: 20px;
 }
+.mensaje{
+	font-family: 'fuente';
+    font-size: 20px;
+    color: #FF0000;
+}
 .boxc{
     margin: auto;
 }
