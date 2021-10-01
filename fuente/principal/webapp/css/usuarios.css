@@ -2,36 +2,152 @@
     font-family: 'fuente';
     src: url(WorkSans-VariableFont_wght.ttf);
 }
-
 body{
-    min-height: 80vh;
-    margin: 20;
-    background: #09070F;
-    color: white;
+    font-family: 'fuente';
+    background: radial-gradient(ellipse at 50% 50%,#962EFF ,#09070F 60%);
+    color: #fff;
 }
-.caja{
-    background: white;
+.top{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0%;
+    padding-top: 1%;
 }
-.box5{
-    padding: 10px;
-    text-align: center;
-    border-radius:30px;
-    margin: 20px, 20px, 20px, 20px;
-    background-color: rgba(255, 255, 255, .50);
-    color: #09070F;
+.barra{
+    margin: auto;
+    padding: 1% 2% 1% 2%;
+    border-radius: 40px;
+    background-color: #fff;
+    color: #962EFF;
+    float: right;
 }
-.container{
-    Height: 65%;
-    Display:grid;
+.mid{
+    color: #000;
+    background-color: rgba(255, 255, 255, .70);
+    border-radius: 30px;
+    margin-top: 2%;
 }
-.container{
-    Grid-template-columns: 1fr 8fr 1fr;
-    Grid-template-rows:  20% 55%;
+
+table{
+    width: 95%;
+    text-align: left;
+    margin: auto;
+    border-collapse:collapse;
 }
+th,td{
+    padding: 2px;
+    border-bottom: solid 2px black;
+}
+th{
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 18px;
+}
+tr:hover td{
+    background-color: #962eff94;
+    color: black;
+}
+h2{
+    padding: 1% 3%;
+    border-radius: 30px;
+    background-color: #fff;
+    border-style: solid;
+    border-color: #962EFF;
+    font-size: 20px;
+}
+
+.bot{
+    margin-top: 2%;
+    background-color: rgba(255, 255, 255, .70);
+    color: #000;
+    border-radius: 30px;
+    max-height: 230px;
+}
+
+
 .minigrid{
     margin: 20;
     Height: 100vh;
     Display:grid;
+}
+.minigrid{
+    grid-gap: 20px;   
+    Grid-template-columns: 1fr 1fr 1fr ;
+}
+.boton{
+    border: none;
+    outline: none;
+    height: 35px;
+    background: white;
+    color: #962EFF;
+    font-size: 18px;
+    border-radius: 20px;
+    width: 130px;
+}
+.botonNuevoUsuario{
+    border: none;
+    outline: none;
+    height: 35px;
+    background: white;
+    color: #962EFF;
+    font-size: 18px;
+    border-radius: 20px;
+    min-width: 200px;
+}
+.botonBuscar{
+    background-color: #962EFF;
+    outline: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 40px;
+}
+.redbuton{
+    border: none;
+    outline: none;
+    height: 40px;
+    background:#ff0000;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    width: 50px;
+}
+.contenedor{
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.cajaTexto{
+    border: 0;
+    outline: none;
+    border-radius: 15px;
+    height: 30px;
+    width: 90%;
+    max-width: 300px;
+    padding-left: 3%;
+}
+.texto{
+    font-size: 18px;
+}
+.minigrid div{
+    padding-left: 6%;
+}
+.cajaBuscar{
+    border: 0;
+    outline: none;
+    border-radius: 15px;
+}
+.botonAgregar{
+    border: none;
+    outline: none;
+    height: 30px;
+    background: white;
+    color: #962EFF;
+    font-size: 18px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 300px;
 }
 .minigrid{
     grid-gap: 20px;   
