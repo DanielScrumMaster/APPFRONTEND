@@ -1,7 +1,7 @@
 package com.dmaktech.usuarios;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,41 +22,40 @@ public class UsuarioServlet extends HttpServlet {
 	}	
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Usuario> usuarios = usuarioService.getUsuarios();
-		req.setAttribute("usuarios", usuarios);
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {		
+		
+		String accion = req.getParameter("accion");
+				
+		if(accion != null)
+			handleAction(accion, req);
+		
+		Optional<String> optCedula = Optional.ofNullable(req.getParameter("cedulaBuscada"));
+		
+		req.setAttribute("usuarios", usuarioService.getUsuarios(optCedula.orElse("")));	
 		req.getRequestDispatcher("jsp/usuarios.jsp").forward(req, resp);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+				
+		doGet(request, response);
 		
-		if(request.getParameter("consultar") != null) {
-			
-			Usuario usuario = usuarioService.getUsuario(request.getParameter("cedula"));
-			request.setAttribute("usuario", usuario);
-			
-		} else if(request.getParameter("borrar") != null) {
-			
+	}	
+	
+	private void handleAction(String accion, HttpServletRequest request) {
+		switch(accion) {
+		case "borrar":
 			usuarioService.borrarUsuario(request.getParameter("cedula"));
-			
-		} else if(request.getParameter("crear") != null) {
-			
+			break;
+		case "crear":
 			Usuario nuevoUsuario = new Usuario(
 					Long.parseLong(request.getParameter("cedula")),
 					request.getParameter("email"),
 					request.getParameter("nombres"),
 					request.getParameter("password"),
 					request.getParameter("usuario")
-			);
-			
-			usuarioService.crearUsuario(nuevoUsuario);
-		} else if(request.getParameter("actualizar") != null) {
-			
-			
-			
-		}
-		
-		doGet(request, response);
-		
+			);			
+			usuarioService.crearUsuario(nuevoUsuario);			
+			break;		
+		}		
 	}	
 }

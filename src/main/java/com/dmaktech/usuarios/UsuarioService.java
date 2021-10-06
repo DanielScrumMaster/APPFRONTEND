@@ -4,7 +4,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -66,21 +68,22 @@ public class UsuarioService {
 		return false;
 	}
 	
-	public List<Usuario> getUsuarios() {
+	public List<Usuario> getUsuarios(String filtroCedulas) {
 		
 		try {			
-			url = new URL(baseURL);
+			url = new URL(baseURL + "?filtroCedulas=" + filtroCedulas);
 			
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();			
-			connection.setRequestMethod("GET");
+			connection.setRequestMethod("GET");			
 			
-			return mapper.readValue(connection.getInputStream(), new TypeReference<List<Usuario>>() {});			
+			List<Usuario> usuarios = mapper.readValue(connection.getInputStream(), new TypeReference<List<Usuario>>() {});
+			connection.disconnect();
+			return usuarios;			
 			
 		} catch (Exception e) {			
 			e.printStackTrace();
+			return Collections.emptyList();
 		}
-		
-		return null;
 	}
 	
 	public boolean borrarUsuario(String cedula) {

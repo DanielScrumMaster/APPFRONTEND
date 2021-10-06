@@ -5,25 +5,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Menu de navegacion</title>
-	<link rel="stylesheet" type="text/css" href="estilosCSS/menu.css">
+	<link rel="stylesheet" type="text/css" href="./css/menu.css">
 </head>
 <body>
 	<section>
 		<div class="grid">
 			<div class="logo">
-				<img src="imagenes/LOGO.png" alt="Logo">
+				<img src="imagenes/logo.png" alt="Logo">
 			</div>
 			<div class="lista">
-				<menu>
+				<nav>
 					<ul class="menu">
-						<li><a href="#">Usuarios</a></li>
-						<li><a href="#">Clientes</a></li>
+						<li><a href="./usuarios">Usuarios</a></li>
+						<li><a href="./clientes">Clientes</a></li>
 						<li><a href="#">Proveedores</a></li>
 						<li><a href="#">Productos</a></li>
 						<li><a href="#">Ventas</a></li>
 						<li><a href="#">Reportes</a></li>
 					</ul>
-				</menu>
+				</nav>
 			</div>
 		</div>
 		<p>.</p>
