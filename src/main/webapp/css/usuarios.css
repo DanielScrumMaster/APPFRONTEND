@@ -1,5 +1,9 @@
+@font-face {
+    font-family: 'fuente';
+    src: url(WorkSans-VariableFont_wght.ttf);
+}
 body{
-    font-family: 'fuente', sans-serif;
+    font-family: 'fuente';
     background: radial-gradient(ellipse at 50% 50%,#962EFF ,#09070F 60%);
     color: #fff;
 }
@@ -8,6 +12,7 @@ body{
     grid-template-columns: 1fr 1fr;
     padding: 0%;
     padding-top: 1%;
+    background-color: rgba(255, 255, 255, .0);
 }
 .barra{
     margin: auto;
@@ -144,122 +149,4 @@ h2{
     border-radius: 20px;
     width: 90%;
     max-width: 300px;
-}
-.minigrid{
-    grid-gap: 20px;   
-    Grid-template-columns: 1fr 1fr 1fr 1fr;
-    Grid-template-rows:  30% 20%;
-}
-.boxa{
-    padding-left: 22%;
-    text-align: left;
-    margin: auto;
-    margin-top: 20%;
-}
-.boxb{
-
-    text-align: left;
-    margin: auto;
-    margin-top: 20%;
-    padding-right: 22%;
-}
-.boxc input[type="submit"] {
-            border: none;
-            outline: none;
-            height: 40px;
-            background: white;
-            color: #962EFF;
-            font-size: 18px;
-            border-radius: 20px;
-            opacity: 100%;
-            width: 130px;
-}
-.boxc input[type="submit"]:hover {
-            cursor: pointer;
-            background: white;
-            color: mediumpurple;
-            }
-.boxd input[type="submit"] {
-            border: none;
-            outline: none;
-            height: 40px;
-            background: white;
-            color: #962EFF;
-            font-size: 18px;
-            border-radius: 20px;
-            width: 130px;
-}
-.boxd input[type="submit"]:hover {
-            cursor: pointer;
-            background: white;
-            color: mediumpurple;
-            }
-.boxa input[type="text"] {
-            border: none;
-            outline: none;
-            height: 40px;
-            background: white;
-            color: purple;
-            font-size: 18px;
-            border-radius: 20px;
-}
-.boxa input[type="text"]:hover {
-            background: white;
-            color: mediumpurple;
-            }
-.boxb input[type="text"] {
-            border: none;
-            outline: none;
-            height: 40px;
-            background: white;
-            color: purple;
-            font-size: 18px;
-            border-radius: 20px;
-}
-.boxb input[type="password"] {
-            border: none;
-            outline: none;
-            height: 40px;
-            background: #fff;
-            color: purple;
-            font-size: 18px;
-            border-radius: 20px;
-}
-.boxb input[type="password"]:hover {
-            background: white;
-            color: mediumpurple;
-}
-
-.texto{
-    font-family: 'fuente';
-    font-size: 20px;
-}
-.mensaje{
-	font-family: 'fuente';
-    font-size: 20px;
-    color: #FF0000;
-}
-.boxc{
-    margin: auto;
-}
-.boxd{
-    margin: auto;
-
-}
-img{
-    width: 200px; height: 100px;
-}
-.contenedor{
-    Height: 100vh;
-    Display:grid;
-}
-.contenedor{
-    Grid-template-columns: 1fr 80% 1fr;
-    Grid-template-rows:  20% 55%;
-}
-.formulario{
-    background: radial-gradient(ellipse at 50% 50%,#962EFF ,#09070F 60%);
-}
-.tabla{
-    background: radial-gradient(ellipse at 50% 50%,#962EFF ,#09070F 60%);
 }

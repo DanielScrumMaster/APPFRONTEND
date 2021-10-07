@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, user-scalable=0,initial-scale=1.0, maximum-scale=1.0,minimun-scale=1.0">
-	<!-- <link rel="stylesheet" href="./css/usuarios.css"> -->
+	<link rel="stylesheet" href="./css/usuarios.css">
 <title>Usuarios</title>
 </head>
 <body>
