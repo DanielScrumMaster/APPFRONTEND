@@ -21,6 +21,7 @@ body{
     background-color: #fff;
     color: #962EFF;
     float: right;
+    max-height: 30px;
 }
 .mid{
     color: #000;
@@ -43,6 +44,7 @@ th{
     margin-top: 5px;
     padding: 5px;
     font-size: 18px;
+    color: #000;
 }
 tr:hover td{
     background-color: #962eff94;
@@ -57,23 +59,28 @@ h2{
     font-size: 20px;
 }
 
-.bot{
+.bott{
     margin-top: 2%;
     background-color: rgba(255, 255, 255, .70);
     color: #000;
     border-radius: 30px;
-    max-height: 230px;
+    max-height: 300px;
+    max-width: 97%;
+    min-height: 300px;
 }
+.bot{
+    display: grid;
+    Grid-template-columns: 1fr 1fr;
 
-
-.minigrid{
+}
+.agregar{
     margin: 20;
     Height: 100vh;
     Display:grid;
 }
-.minigrid{
+.agregar{
     grid-gap: 20px;   
-    Grid-template-columns: 1fr 1fr 1fr ;
+    Grid-template-columns: 1fr 1fr;
 }
 .boton{
     border: none;
@@ -139,7 +146,7 @@ h2{
     outline: none;
     border-radius: 15px;
 }
-.botonAgregar{
+.boton1{
     border: none;
     outline: none;
     height: 30px;
@@ -149,4 +156,40 @@ h2{
     border-radius: 20px;
     width: 90%;
     max-width: 300px;
+}
+.boton2{
+    border: none;
+    outline: none;
+    height: 30px;
+    background: white;
+    color: #962EFF;
+    font-size: 18px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 150px;
+}
+.boton3{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #962EFF;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 100px;
+}
+
+.contenedorProductos{
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+}
+.contenedorProductos div{
+    margin-top: 15%;
+}
+#nombreArchivo{
+    float: right;
+}
+.cargarArchivo{
+    text-align: center;
 }
