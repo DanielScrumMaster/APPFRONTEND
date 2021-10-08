@@ -20,7 +20,7 @@
 		<section class="top">
 			<div>
 				<input class="botonNuevoUsuario" type="submit" name="crear"
-					value="Nuevo Usuario">
+					value="Usuarios">
 			</div>
 			<div>
 				<div class="barra">
@@ -58,7 +58,7 @@
 						<input class="boton" type="submit" value="Editar">
 					</td>
 					<td>
-						<a href="usuarios?accion=borrar&cedula=<%=usuario.getCedula()%>">X</a>												
+						<a href="usuarios?accion=borrar&cedula=<%=usuario.getCedula()%>">X</a>
 					</td>
 				</tr>
 				<%
@@ -68,35 +68,74 @@
 		</section>
 
 		<section class="bot">
-			<div class="titulo">
-				<h2>Agregar nuevo usuario</h2>
+			<div>
+				<section class="bott">
+					<div class="titulo">
+						<h2>Agregar nuevo usuario</h2>
+					</div>
+		
+					<form action="./usuarios" method="post">
+		
+						<div class="agregar">
+							<div class="caja">
+								<label class="texto" for="cedula">Cedula</label><br> 
+								<input class="cajaTexto" type="text" name="cedula" required><br><br>
+		
+								<label class="texto" for="nombres">NombreCompleto</label><br>
+								<input class="cajaTexto" type="text" name="nombres" required><br><br>
+		
+								<label class="texto" for="email">Correo Electronico</label><br>
+								<input class="cajaTexto" type="text" name="email" required>
+							</div>
+		
+							<div class="caja">
+								<label class="texto" for="usuario"> Usuario</label><br>
+								<input class="cajaTexto" type="text" name="usuario" required><br><br>
+		
+								<label class="texto" for="password">Contraseña</label><br> 
+								<input class="cajaTexto" type="password" name="password" required>
+								
+								<br><br><br> <input class="boton1" type="submit" name="accion" value="crear">
+							</div>
+						</div>
+					</form>
+				</section>
 			</div>
-
-			<form action="./usuarios" method="post">
-
-				<div class="minigrid">
-					<div class="caja">
-						<label class="texto" for="cedula">Cedula</label><br> 
-						<input class="cajaTexto" type="text" name="cedula" required><br><br>
-						<label class="texto" for="nombres">NombreCompleto</label><br>
-						<input class="cajaTexto" type="text" name="nombres" required>
+			<div>
+				<section class="bott">
+					<div class="titulo">
+						<h2>Actualizar Registro</h2>
 					</div>
-
-					<div class="caja">
-						<label class="texto" for="email">Correo Electronico:</label><br>
-						<input class="cajaTexto" type="text" name="email" required><br>
-						<br> <label class="texto" for="usuario"> Usuario:</label><br>
-						<input class="cajaTexto" type="text" name="usuario" required> 
-					</div>
-
-					<div class="caja">
-						<label class="texto" for="password">Contraseña</label><br> 
-						<input class="cajaTexto" type="password" name="password" required><br>
-						<br> <br> <input class="botonAgregar" type="submit" name="accion" value="crear">
-					</div>
-				</div>
-			</form>
+		
+					<form action="./usuarios" method="post">
+		
+						<div class="agregar">
+							<div class="caja">
+								<label class="texto" for="cedula">Cedula</label><br> 
+								<input class="cajaTexto" type="text" name="cedula" required><br><br>
+		
+								<label class="texto" for="nombres">NombreCompleto</label><br>
+								<input class="cajaTexto" type="text" name="nombres" required><br><br>
+		
+								<label class="texto" for="email">Correo Electronico:</label><br>
+								<input class="cajaTexto" type="text" name="email" required>
+							</div>
+		
+							<div class="caja">
+								<label class="texto" for="usuario"> Usuario:</label><br>
+								<input class="cajaTexto" type="text" name="usuario" required><br><br>
+		
+								<label class="texto" for="password">Contraseña</label><br> 
+								<input class="cajaTexto" type="password" name="password" required>
+								
+								<br><br><br> <input class="boton1" type="submit" name="accion" value="actualizar">
+							</div>
+						</div>
+					</form>
+				</section>
+			</div>
 		</section>
+		
 	</div>
 </body>
 </html>
