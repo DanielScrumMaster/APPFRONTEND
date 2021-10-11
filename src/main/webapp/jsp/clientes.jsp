@@ -1,5 +1,6 @@
 <%@page import="java.util.List"%>
-<%@page import="com.dmaktech.usuarios.Usuario"%>
+<%@page import="com.dmaktech.clientes.Cliente"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -24,7 +25,7 @@
 			</div>
 			<div>
 				<div class="barra">
-					<form action="./usuarios" method="GET">
+					<form action="./clientes" method="GET">
 						<label for="cedula">Buscar:</label>
 						<input class="cajaBuscar" type="text" placeholder="Ingrese numero de cedula" name="cedulaBuscada">
 						<button class="botonBuscar" name="accion" value="buscar">&#128270;</button>		
@@ -45,27 +46,21 @@
 						<th></th>
 						<th></th>
 					</tr>
-				</thead>
-				<%
-				List<Usuario> usuarios = (List<Usuario>) request.getAttribute("usuarios");
-				for (Usuario usuario : usuarios) {
-				%>
-				<tr>
-					<td><%=usuario.getCedula()%></td>
-					<td><%=usuario.getNombres()%></td>
-					<td><%=usuario.getEmail()%></td>
-					<td><%=usuario.getUsuario()%></td>
-                    <td>Correo</td>
-					<td>
-						<input class="boton" type="submit" value="Editar">
-					</td>
-					<td>
-						<a href="usuarios?accion=borrar&cedula=<%=usuario.getCedula()%>">X</a>												
-					</td>
-				</tr>
-				<%
-				}
-				%>
+				</thead>			
+				<% List<Cliente> clientes = (List<Cliente>) request.getAttribute("clientes"); %>	
+				<tbody>
+					<c:forEach items="${clientes}" var="cliente">
+						<tr>
+							<td>${cliente.getCedula()}</td>
+							<td>${cliente.getNombres()}</td>
+							<td>${cliente.getDireccion()}</td>
+							<td>${cliente.getTelefono()}</td>
+							<td>${cliente.getEmail()}</td>
+							<td><input class="boton" type="submit" value="Editar"></td>
+							<td><a href="clientes?accion=borrar&cedula=${cliente.getCedula()}">X</a></td>
+						</tr>		
+					</c:forEach>
+				</tbody>		
 			</table>
 		</section>
 
@@ -73,26 +68,26 @@
 			<div>
 				<section class="bott">
 					<div class="titulo">
-						<h2>Agregar nuevo usuario</h2>
+						<h2>Agregar nuevo cliente</h2>
 					</div>
 		
-					<form action="./usuarios" method="post">
+					<form action="./clientes" method="post">
 		
 						<div class="agregar">
 							<div class="caja">
 								<label class="texto" for="cedula">Cedula</label><br> 
 								<input class="cajaTexto" type="text" name="cedula" required><br><br>
 		
-								<label class="texto" for="nombres">NombreCompleto</label><br>
+								<label class="texto" for="nombres">Nombre Completo</label><br>
 								<input class="cajaTexto" type="text" name="nombres" required><br><br>
 		
 								<label class="texto" for="email">Direccion</label><br>
-								<input class="cajaTexto" type="text" name="email" required>
+								<input class="cajaTexto" type="text" name="direccion" required>
 							</div>
 		
 							<div class="caja">
 								<label class="texto" for="usuario">Telefono</label><br>
-								<input class="cajaTexto" type="text" name="usuario" required><br><br>
+								<input class="cajaTexto" type="text" name="telefono" required><br><br>
 		
 								<label class="texto" for="email">Correo Electronico</label><br>
 								<input class="cajaTexto" type="text" name="email" required>
@@ -109,7 +104,7 @@
 						<h2>Actualizar Registro</h2>
 					</div>
 		
-					<form action="./usuarios" method="post">
+					<form action="./clientes" method="post">
 		
 						<div class="agregar">
 							<div class="caja">

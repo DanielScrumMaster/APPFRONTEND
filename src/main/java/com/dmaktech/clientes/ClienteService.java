@@ -1,4 +1,4 @@
-package com.dmaktech.usuarios;
+package com.dmaktech.clientes;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -9,18 +9,18 @@ import java.util.List;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class UsuarioService {
+public class ClienteService {
 
 	private URL url;
 	private final String baseURL;
 	private ObjectMapper mapper;
 		
-	public UsuarioService()  {		
-		baseURL = "http://localhost:5000/usuarios/";
+	public ClienteService()  {		
+		baseURL = "http://localhost:5000/clientes/";
 		mapper = new ObjectMapper();
 	}
 
-	public Usuario getUsuario(String cedula) {
+	public Cliente getCliente(String cedula) {
 		
 		try {			
 			url = new URL(baseURL + cedula);			
@@ -30,10 +30,10 @@ public class UsuarioService {
 			if(connection.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND)
 				return null;
 					
-			Usuario usuario = mapper.readValue(connection.getInputStream(), Usuario.class);			
+			Cliente cliente = mapper.readValue(connection.getInputStream(), Cliente.class);			
 						
 			connection.disconnect();			
-			return usuario;
+			return cliente;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -42,7 +42,7 @@ public class UsuarioService {
 		return null;
 	}	
 	
-	public boolean crearUsuario(Usuario nuevoUsuario) {
+	public boolean crearCliente(Cliente nuevoCliente) {
 		
 		try {			
 			url = new URL(baseURL);
@@ -52,8 +52,8 @@ public class UsuarioService {
 			connection.setRequestProperty("Content-Type", "application/json");
 			connection.setDoOutput(true);
 			
-			String jsonUsuario = mapper.writeValueAsString(nuevoUsuario);			
-			connection.getOutputStream().write(jsonUsuario.getBytes(StandardCharsets.UTF_8));	
+			String jsonCliente = mapper.writeValueAsString(nuevoCliente);			
+			connection.getOutputStream().write(jsonCliente.getBytes(StandardCharsets.UTF_8));	
 			
 			if(connection.getResponseCode() == HttpURLConnection.HTTP_CREATED)
 				return true;
@@ -66,7 +66,7 @@ public class UsuarioService {
 		return false;
 	}
 	
-	public List<Usuario> getUsuarios(String filtroCedulas) {
+	public List<Cliente> getClientes(String filtroCedulas) {
 		
 		try {			
 			url = new URL(baseURL + "?filtroCedulas=" + filtroCedulas);
@@ -74,9 +74,9 @@ public class UsuarioService {
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();			
 			connection.setRequestMethod("GET");			
 			
-			List<Usuario> usuarios = mapper.readValue(connection.getInputStream(), new TypeReference<List<Usuario>>() {});
+			List<Cliente> clientes = mapper.readValue(connection.getInputStream(), new TypeReference<List<Cliente>>() {});
 			connection.disconnect();
-			return usuarios;			
+			return clientes;			
 			
 		} catch (Exception e) {			
 			e.printStackTrace();
@@ -84,7 +84,7 @@ public class UsuarioService {
 		}
 	}
 	
-	public boolean borrarUsuario(String cedula) {
+	public boolean borrarCliente(String cedula) {
 		try {
 			url = new URL(baseURL + cedula);
 			
@@ -101,4 +101,5 @@ public class UsuarioService {
 		
 		return false;
 	}
+	
 }

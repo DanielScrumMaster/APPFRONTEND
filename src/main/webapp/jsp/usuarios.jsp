@@ -1,5 +1,6 @@
 <%@page import="java.util.List"%>
 <%@page import="com.dmaktech.usuarios.Usuario"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -45,25 +46,19 @@
 						<th></th>
 					</tr>
 				</thead>
-				<%
-				List<Usuario> usuarios = (List<Usuario>) request.getAttribute("usuarios");
-				for (Usuario usuario : usuarios) {
-				%>
-				<tr>
-					<td><%=usuario.getCedula()%></td>
-					<td><%=usuario.getNombres()%></td>
-					<td><%=usuario.getEmail()%></td>
-					<td><%=usuario.getUsuario()%></td>
-					<td>
-						<input class="boton" type="submit" value="Editar">
-					</td>
-					<td>
-						<a href="usuarios?accion=borrar&cedula=<%=usuario.getCedula()%>">X</a>
-					</td>
-				</tr>
-				<%
-				}
-				%>
+				<tbody>
+					<% List<Usuario> usuarios = (List<Usuario>) request.getAttribute("usuarios"); %>
+					<c:forEach items="${usuarios}" var="usuario">
+						<tr>
+							<td>${usuario.getCedula()}</td>
+							<td>${usuario.getNombres()}</td>
+							<td>${usuario.getEmail()}</td>
+							<td>${usuario.getUsuario()}</td>
+							<td><input class="boton" type="submit" value="Editar"></td>
+							<td><a href="usuarios?accion=borrar&cedula=${usuario.getCedula()}">X</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
 			</table>
 		</section>
 
