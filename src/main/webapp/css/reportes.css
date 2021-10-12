@@ -1,0 +1,64 @@
+body{
+    background: radial-gradient(ellipse at 50% 50%,#962EFF ,#09070F 60%);
+    color: #fff;
+}
+.contenedor{
+    padding-top: 15%;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+}
+form{
+    background-color: rgba(255, 255, 255, .70);
+    padding: 5%;
+    border: none;
+    border-radius: 20px;
+}
+.boton{
+    border: none;
+    outline: none;
+    height: 30px;
+    background: #962EFF;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 190px;
+}
+
+
+th{
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 18px;
+    color: #000;
+}
+tr:hover td{
+    background-color: #962eff94;
+    color: black;
+}
+table{
+    margin: auto;
+    color: black;
+    border-radius: 20px;
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .80);;
+}
+th,td{
+
+    padding: 10px;
+}
+thead{
+    border-bottom: solid 3px #962EFF;
+
+}
+tr:nth-child(even){
+    background-color: white;
+}
+tr{
+    border-radius: 20px;
+}
