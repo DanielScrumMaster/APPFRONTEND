@@ -132,5 +132,7 @@
 			</div>
 		</section>		
 	</div>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/alerts2.js"></script>
 </body>
 </html>

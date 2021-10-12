@@ -1,0 +1,31 @@
+.topVentas{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0%;
+    padding-top: 1%;
+    background-color: rgba(255, 255, 255, .0);
+}
+.topVentas div{
+    text-align: center;
+}
+th{
+    color: #000;
+}
+.total{
+    margin-top: 2%;
+    background-color: rgba(255, 255, 255, .70);
+    color: #000;
+    border-radius: 30px;
+    max-height: 300px;
+    max-width: 100%; 
+    min-height: 300px;
+}
+.cajaTotal{
+    margin: 20;
+    Height: 100vh;
+    Display:grid;
+}
+.cajaTotal{
+    grid-gap: 20px;   
+    Grid-template-columns: 3fr 1fr 1fr;
+}
