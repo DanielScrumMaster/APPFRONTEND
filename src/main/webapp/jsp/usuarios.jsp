@@ -129,8 +129,7 @@
 					</form>
 				</section>
 			</div>
-		</section>
-		
+		</section>		
 	</div>
 </body>
 </html>

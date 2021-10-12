@@ -115,12 +115,12 @@
 								<input class="cajaTexto" type="text" name="nombres" required><br><br>
 		
 								<label class="texto" for="email">Direccion</label><br>
-								<input class="cajaTexto" type="text" name="email" required>
+								<input class="cajaTexto" type="text" name="direccion" required>
 							</div>
 		
 							<div class="caja">
 								<label class="texto" for="usuario"> Telefono</label><br>
-								<input class="cajaTexto" type="text" name="usuario" required><br><br>
+								<input class="cajaTexto" type="text" name="telefono" required><br><br>
 		
 								<label class="texto" for="email">Correo Electronico</label><br>
 								<input class="cajaTexto" type="text" name="email" required>
@@ -132,7 +132,6 @@
 				</section>
 			</div>
 		</section>
-		
 	</div>
 </body>
 </html>

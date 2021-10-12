@@ -1,4 +1,4 @@
-package com.dmaktech.clientes;
+package com.dmaktech.proveedores;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -9,16 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/clientes")
-public class ClienteServlet extends HttpServlet {
+@WebServlet("/proveedores")
+public class ProveedorServlet extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
-       
-	private ClienteService clienteService;
+	
+	private ProveedorService proveedorService;
 	
 	@Override
 	public void init() throws ServletException {		
 		super.init();		
-		clienteService = new ClienteService();		
+		proveedorService = new ProveedorService();		
 	}	
 	
 	@Override
@@ -29,10 +30,10 @@ public class ClienteServlet extends HttpServlet {
 		if(accion != null)
 			handleAction(accion, req);
 		
-		Optional<String> optCedula = Optional.ofNullable(req.getParameter("cedulaBuscada"));
+		Optional<String> optCedula = Optional.ofNullable(req.getParameter("nitBuscado"));
 		
-		req.setAttribute("clientes", clienteService.getClientes(optCedula.orElse("")));	
-		req.getRequestDispatcher("jsp/clientes.jsp").forward(req, resp);
+		req.setAttribute("proveedores", proveedorService.getProveedores(optCedula.orElse("")));	
+		req.getRequestDispatcher("jsp/proveedores.jsp").forward(req, resp);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -44,28 +45,29 @@ public class ClienteServlet extends HttpServlet {
 	private void handleAction(String accion, HttpServletRequest request) {
 		switch(accion) {
 		case "borrar":
-			clienteService.borrarCliente(request.getParameter("cedula"));
+			proveedorService.borrarProveedor(request.getParameter("nit"));
 			break;
 		case "crear":
-			Cliente nuevoCliente = new Cliente(
-					Long.parseLong(request.getParameter("cedula")),
+			Proveedor nuevoProveedor = new Proveedor(
+					Long.parseLong(request.getParameter("nit")),
+					request.getParameter("ciudad"),
 					request.getParameter("direccion"),
-					request.getParameter("email"),
-					request.getParameter("telefono"),
-					request.getParameter("nombres")
+					request.getParameter("nombre"),
+					request.getParameter("telefono")					
 			);			
-			clienteService.crearCliente(nuevoCliente);			
+			proveedorService.crearProveedor(nuevoProveedor);			
 			break;		
 		case "actualizar":
-			Cliente clienteActualizado = new Cliente(
-					Long.parseLong(request.getParameter("cedula")),
+			Proveedor proveedorActualizado = new Proveedor(
+					Long.parseLong(request.getParameter("nit")),
+					request.getParameter("ciudad"),
 					request.getParameter("direccion"),
-					request.getParameter("email"),
-					request.getParameter("telefono"),
-					request.getParameter("nombres")
+					request.getParameter("nombre"),
+					request.getParameter("telefono")
 			);			
-			clienteService.actualizarCliente(clienteActualizado);			
+			proveedorService.actualizarProveedor(proveedorActualizado);			
 			break;	
 		}		
-	}	
+	}
+	
 }

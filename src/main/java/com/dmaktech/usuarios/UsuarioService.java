@@ -66,6 +66,30 @@ public class UsuarioService {
 		return false;
 	}
 	
+	public boolean actualizarUsuario(Usuario usuario) {
+		
+		try {			
+			url = new URL(baseURL + usuario.getCedula());
+			
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();			
+			connection.setRequestMethod("PUT");
+			connection.setRequestProperty("Content-Type", "application/json");
+			connection.setDoOutput(true);
+			
+			String jsonUsuario = mapper.writeValueAsString(usuario);			
+			connection.getOutputStream().write(jsonUsuario.getBytes(StandardCharsets.UTF_8));	
+			
+			if(connection.getResponseCode() == HttpURLConnection.HTTP_CREATED)
+				return true;
+			
+			connection.disconnect();		
+			
+		} catch (Exception e) {			
+			e.printStackTrace();
+		}		
+		return false;
+	}
+	
 	public List<Usuario> getUsuarios(String filtroCedulas) {
 		
 		try {			

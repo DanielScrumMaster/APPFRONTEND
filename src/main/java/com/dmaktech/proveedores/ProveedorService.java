@@ -1,4 +1,4 @@
-package com.dmaktech.clientes;
+package com.dmaktech.proveedores;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -9,31 +9,31 @@ import java.util.List;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class ClienteService {
+public class ProveedorService {
 
 	private URL url;
 	private final String baseURL;
 	private ObjectMapper mapper;
 		
-	public ClienteService()  {		
-		baseURL = "http://localhost:5000/clientes/";
+	public ProveedorService()  {		
+		baseURL = "http://localhost:5000/proveedores/";
 		mapper = new ObjectMapper();
 	}
 
-	public Cliente getCliente(String cedula) {
+	public Proveedor getCliente(String nit) {
 		
 		try {			
-			url = new URL(baseURL + cedula);			
+			url = new URL(baseURL + nit);			
 			
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 						
 			if(connection.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND)
 				return null;
 					
-			Cliente cliente = mapper.readValue(connection.getInputStream(), Cliente.class);			
+			Proveedor proveedor = mapper.readValue(connection.getInputStream(), Proveedor.class);			
 						
 			connection.disconnect();			
-			return cliente;
+			return proveedor;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -42,7 +42,7 @@ public class ClienteService {
 		return null;
 	}	
 	
-	public boolean crearCliente(Cliente nuevoCliente) {
+	public boolean crearProveedor(Proveedor nuevoProveedor) {
 		
 		try {			
 			url = new URL(baseURL);
@@ -52,8 +52,8 @@ public class ClienteService {
 			connection.setRequestProperty("Content-Type", "application/json");
 			connection.setDoOutput(true);
 			
-			String jsonCliente = mapper.writeValueAsString(nuevoCliente);			
-			connection.getOutputStream().write(jsonCliente.getBytes(StandardCharsets.UTF_8));	
+			String jsonProveedor = mapper.writeValueAsString(nuevoProveedor);			
+			connection.getOutputStream().write(jsonProveedor.getBytes(StandardCharsets.UTF_8));	
 			
 			if(connection.getResponseCode() == HttpURLConnection.HTTP_CREATED)
 				return true;
@@ -66,18 +66,18 @@ public class ClienteService {
 		return false;
 	}
 	
-	public boolean actualizarCliente(Cliente cliente) {
+	public boolean actualizarProveedor(Proveedor proveedor) {
 		
 		try {			
-			url = new URL(baseURL + cliente.getCedula());
+			url = new URL(baseURL + proveedor.getNit());
 			
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();			
 			connection.setRequestMethod("PUT");
 			connection.setRequestProperty("Content-Type", "application/json");
 			connection.setDoOutput(true);
 			
-			String jsonCliente = mapper.writeValueAsString(cliente);			
-			connection.getOutputStream().write(jsonCliente.getBytes(StandardCharsets.UTF_8));	
+			String jsonProveedor = mapper.writeValueAsString(proveedor);			
+			connection.getOutputStream().write(jsonProveedor.getBytes(StandardCharsets.UTF_8));	
 			
 			if(connection.getResponseCode() == HttpURLConnection.HTTP_CREATED)
 				return true;
@@ -90,17 +90,17 @@ public class ClienteService {
 		return false;
 	}
 	
-	public List<Cliente> getClientes(String filtroCedulas) {
+	public List<Proveedor> getProveedores(String filtroNit) {
 		
 		try {			
-			url = new URL(baseURL + "?filtroCedulas=" + filtroCedulas);
+			url = new URL(baseURL + "?filtroNit=" + filtroNit);
 			
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();			
 			connection.setRequestMethod("GET");			
 			
-			List<Cliente> clientes = mapper.readValue(connection.getInputStream(), new TypeReference<List<Cliente>>() {});
+			List<Proveedor> proveedores = mapper.readValue(connection.getInputStream(), new TypeReference<List<Proveedor>>() {});
 			connection.disconnect();
-			return clientes;			
+			return proveedores;			
 			
 		} catch (Exception e) {			
 			e.printStackTrace();
@@ -108,9 +108,9 @@ public class ClienteService {
 		}
 	}
 	
-	public boolean borrarCliente(String cedula) {
+	public boolean borrarProveedor(String nit) {
 		try {
-			url = new URL(baseURL + cedula);
+			url = new URL(baseURL + nit);
 			
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			
@@ -124,6 +124,5 @@ public class ClienteService {
 		}
 		
 		return false;
-	}
-	
+	}	
 }

@@ -56,6 +56,16 @@ public class UsuarioServlet extends HttpServlet {
 			);			
 			usuarioService.crearUsuario(nuevoUsuario);			
 			break;		
+		case "actualizar":
+			Usuario usuarioActualizado = new Usuario(
+					Long.parseLong(request.getParameter("cedula")),
+					request.getParameter("email"),
+					request.getParameter("nombres"),
+					request.getParameter("password"),
+					request.getParameter("usuario")
+			);			
+			usuarioService.actualizarUsuario(usuarioActualizado);
+			break;
 		}		
 	}	
 }
