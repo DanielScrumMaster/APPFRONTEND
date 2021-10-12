@@ -12,6 +12,7 @@
 	content="width=device-width, user-scalable=0,initial-scale=1.0, maximum-scale=1.0,minimun-scale=1.0">
 	<link rel="stylesheet" href="./css/usuarios.css">
 <title>Clientes</title>
+<script type="text/javascript" src="./js/datosForm.js" defer></script>
 </head>
 <body>
 	<header class="lista">
@@ -48,7 +49,7 @@
 					</tr>
 				</thead>			
 				<% List<Cliente> clientes = (List<Cliente>) request.getAttribute("clientes"); %>	
-				<tbody>
+				<tbody id="listado">
 					<c:forEach items="${clientes}" var="cliente">
 						<tr>
 							<td>${cliente.getCedula()}</td>
@@ -56,7 +57,7 @@
 							<td>${cliente.getDireccion()}</td>
 							<td>${cliente.getTelefono()}</td>
 							<td>${cliente.getEmail()}</td>
-							<td><input class="boton" type="submit" value="Editar"></td>
+							<td><input class="boton boton-editar" type="submit" value="Editar"></td>
 							<td><a href="clientes?accion=borrar&cedula=${cliente.getCedula()}">X</a></td>
 						</tr>		
 					</c:forEach>
@@ -104,7 +105,7 @@
 						<h2>Actualizar Registro</h2>
 					</div>
 		
-					<form action="./clientes" method="post">
+					<form action="./clientes" method="post" id="formActualizar">
 		
 						<div class="agregar">
 							<div class="caja">

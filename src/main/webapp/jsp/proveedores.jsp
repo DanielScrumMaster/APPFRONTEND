@@ -12,6 +12,7 @@
 	content="width=device-width, user-scalable=0,initial-scale=1.0, maximum-scale=1.0,minimun-scale=1.0">
 	<link rel="stylesheet" href="./css/usuarios.css">
 <title>Proveedores</title>
+<script type="text/javascript" src="./js/datosForm.js" defer></script>
 </head>
 <body>
 	<header class="lista">
@@ -46,7 +47,7 @@
 						<th></th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody id="listado">
 					<% List<Proveedor> proveedores = (List<Proveedor>) request.getAttribute("proveedores"); %>
 					<c:forEach items="${proveedores}" var="proveedor">
 						<tr>
@@ -55,7 +56,7 @@
 							<td>${proveedor.getDireccion()}</td>
 							<td>${proveedor.getTelefono()}</td>
 							<td>${proveedor.getCiudad()}</td>
-							<td><input class="boton" type="submit" value="Editar"></td>
+							<td><input class="boton boton-editar" type="submit" value="Editar"></td>
 							<td><a href="proveedores?accion=borrar&nit=${proveedor.getNit()}">X</a></td>
 						</tr>
 					</c:forEach>
@@ -103,7 +104,7 @@
 						<h2>Actualizar Registro</h2>
 					</div>
 		
-					<form action="./proveedores" method="post">
+					<form action="./proveedores" method="post" id="formActualizar">
 		
 						<div class="agregar">
 							<div class="caja">
