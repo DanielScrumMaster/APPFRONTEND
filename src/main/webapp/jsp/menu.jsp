@@ -19,7 +19,7 @@
 						<li><a href="./usuarios">Usuarios</a></li>
 						<li><a href="./clientes">Clientes</a></li>
 						<li><a href="./proveedores">Proveedores</a></li>
-						<li><a href="#">Productos</a></li>
+						<li><a href="./productos">Productos</a></li>
 						<li><a href="#">Ventas</a></li>
 						<li><a href="#">Reportes</a></li>
 					</ul>

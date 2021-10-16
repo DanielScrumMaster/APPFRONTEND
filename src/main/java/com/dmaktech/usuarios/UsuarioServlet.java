@@ -32,6 +32,7 @@ public class UsuarioServlet extends HttpServlet {
 		Optional<String> optCedula = Optional.ofNullable(req.getParameter("cedulaBuscada"));
 		
 		req.setAttribute("usuarios", usuarioService.getUsuarios(optCedula.orElse("")));	
+		
 		req.getRequestDispatcher("jsp/usuarios.jsp").forward(req, resp);
 	}
 
@@ -45,6 +46,8 @@ public class UsuarioServlet extends HttpServlet {
 		switch(accion) {
 		case "borrar":
 			usuarioService.borrarUsuario(request.getParameter("cedula"));
+			request.setAttribute("mensajeAlerta", "Usuario borrado exitosamente");
+			request.setAttribute("iconoAlerta", "success");
 			break;
 		case "crear":
 			Usuario nuevoUsuario = new Usuario(
@@ -55,6 +58,8 @@ public class UsuarioServlet extends HttpServlet {
 					request.getParameter("usuario")
 			);			
 			usuarioService.crearUsuario(nuevoUsuario);			
+			request.setAttribute("mensajeAlerta", "Usuario creado exitosamente");
+			request.setAttribute("iconoAlerta", "success");
 			break;		
 		case "actualizar":
 			Usuario usuarioActualizado = new Usuario(
@@ -65,6 +70,8 @@ public class UsuarioServlet extends HttpServlet {
 					request.getParameter("usuario")
 			);			
 			usuarioService.actualizarUsuario(usuarioActualizado);
+			request.setAttribute("mensajeAlerta", "Usuario editado exitosamente");
+			request.setAttribute("iconoAlerta", "success");
 			break;
 		}		
 	}	

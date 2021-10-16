@@ -45,6 +45,8 @@ public class ClienteServlet extends HttpServlet {
 		switch(accion) {
 		case "borrar":
 			clienteService.borrarCliente(request.getParameter("cedula"));
+			request.setAttribute("mensajeAlerta", "Cliente borrado exitosamente");
+			request.setAttribute("iconoAlerta", "success");
 			break;
 		case "crear":
 			Cliente nuevoCliente = new Cliente(
@@ -55,6 +57,8 @@ public class ClienteServlet extends HttpServlet {
 					request.getParameter("nombres")
 			);			
 			clienteService.crearCliente(nuevoCliente);			
+			request.setAttribute("mensajeAlerta", "Cliente creado exitosamente");
+			request.setAttribute("iconoAlerta", "success");
 			break;		
 		case "actualizar":
 			Cliente clienteActualizado = new Cliente(
@@ -64,7 +68,9 @@ public class ClienteServlet extends HttpServlet {
 					request.getParameter("telefono"),
 					request.getParameter("nombres")
 			);			
-			clienteService.actualizarCliente(clienteActualizado);			
+			clienteService.actualizarCliente(clienteActualizado);	
+			request.setAttribute("mensajeAlerta", "Cliente editado exitosamente");
+			request.setAttribute("iconoAlerta", "success");
 			break;	
 		}		
 	}	

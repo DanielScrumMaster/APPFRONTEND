@@ -7,11 +7,11 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<title>Usuarios</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, user-scalable=0,initial-scale=1.0, maximum-scale=1.0,minimun-scale=1.0">
 	<link rel="stylesheet" href="./css/usuarios.css">
-<title>Usuarios</title>
 <script type="text/javascript" src="./js/datosForm.js" defer></script>
 </head>
 <body>
@@ -132,7 +132,11 @@
 			</div>
 		</section>		
 	</div>
+	<% String mensaje = (String) request.getAttribute("mensajeAlerta"); %>
+	<% String icono = (String) request.getAttribute("iconoAlerta"); %>
+	<input type="hidden" value="<%= mensaje %>" id="mensajeAlerta"/>
+	<input type="hidden" value=<%= icono %> id="iconoAlerta"/>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./js/alerts2.js"></script>
+    <script src="./js/alerts.js"></script>
 </body>
 </html>

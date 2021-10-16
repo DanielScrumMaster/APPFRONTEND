@@ -46,6 +46,8 @@ public class ProveedorServlet extends HttpServlet {
 		switch(accion) {
 		case "borrar":
 			proveedorService.borrarProveedor(request.getParameter("nit"));
+			request.setAttribute("mensajeAlerta", "Proveedor borrado exitosamente");
+			request.setAttribute("iconoAlerta", "success");
 			break;
 		case "crear":
 			Proveedor nuevoProveedor = new Proveedor(
@@ -55,7 +57,9 @@ public class ProveedorServlet extends HttpServlet {
 					request.getParameter("nombre"),
 					request.getParameter("telefono")					
 			);			
-			proveedorService.crearProveedor(nuevoProveedor);			
+			proveedorService.crearProveedor(nuevoProveedor);
+			request.setAttribute("mensajeAlerta", "Proveedor creado exitosamente");
+			request.setAttribute("iconoAlerta", "success");
 			break;		
 		case "actualizar":
 			Proveedor proveedorActualizado = new Proveedor(
@@ -65,7 +69,9 @@ public class ProveedorServlet extends HttpServlet {
 					request.getParameter("nombre"),
 					request.getParameter("telefono")
 			);			
-			proveedorService.actualizarProveedor(proveedorActualizado);			
+			proveedorService.actualizarProveedor(proveedorActualizado);
+			request.setAttribute("mensajeAlerta", "Proveedor actualizado exitosamente");
+			request.setAttribute("iconoAlerta", "success");
 			break;	
 		}		
 	}

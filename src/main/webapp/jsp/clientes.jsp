@@ -134,6 +134,11 @@
 			</div>
 		</section>
 	</div>
+	<% String mensaje = (String) request.getAttribute("mensajeAlerta"); %>
+	<% String icono = (String) request.getAttribute("iconoAlerta"); %>
+	<input type="hidden" value="<%= mensaje %>" id="mensajeAlerta"/>
+	<input type="hidden" value=<%= icono %> id="iconoAlerta"/>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/alerts.js"></script>
 </body>
 </html>
