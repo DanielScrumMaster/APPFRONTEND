@@ -1,5 +1,7 @@
 package com.dmaktech.productos;
 
+import com.dmaktech.proveedores.Proveedor;
+
 public class Producto {
 	
 	private Long codigo;
@@ -8,6 +10,7 @@ public class Producto {
 	private Long nitProveedor;
 	private Double precioCompra;
 	private Double precioVenta;
+	private Proveedor proveedor;
 	
 	public Producto() { }
 
@@ -68,5 +71,13 @@ public class Producto {
 	
 	public void setPrecioVenta(Double precioVenta) {
 		this.precioVenta = precioVenta;
+	}
+
+	public Proveedor getProveedor() {
+		return proveedor;
+	}
+
+	public void setProveedor(Proveedor proveedor) {
+		this.proveedor = proveedor;
 	}
 }

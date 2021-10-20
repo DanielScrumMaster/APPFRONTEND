@@ -6,6 +6,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.List;
 
+import com.dmaktech.proveedores.Proveedor;
+import com.dmaktech.proveedores.ProveedorService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -13,13 +15,16 @@ public class ProductoService {
 	private URL url;
 	private final String baseURL;
 	private ObjectMapper mapper;
+	private final ProveedorService proveedorService;
 		
 	public ProductoService()  {		
 		baseURL = "http://localhost:5000/productos/";
 		mapper = new ObjectMapper();
+		proveedorService = new ProveedorService();
 	}
 
 	public Producto getProducto(String codigo) {
+		List<Proveedor> proveedores = proveedorService.getProveedores("");
 		
 		try {			
 			url = new URL(baseURL + codigo);			
@@ -30,7 +35,13 @@ public class ProductoService {
 				return null;
 					
 			Producto producto = mapper.readValue(connection.getInputStream(), Producto.class);			
-						
+			
+			producto.setProveedor(
+					proveedores.stream()
+					.filter(p -> p.getNit() == producto.getNitProveedor())
+					.findFirst()
+					.get());
+			
 			connection.disconnect();			
 			return producto;
 			
@@ -90,7 +101,7 @@ public class ProductoService {
 	}
 	
 	public List<Producto> getProductos(String filtroCodigo) {
-		
+		List<Proveedor> proveedores = proveedorService.getProveedores("");
 		try {			
 			url = new URL(baseURL + "?filtroCodigo=" + filtroCodigo);
 			
@@ -98,6 +109,15 @@ public class ProductoService {
 			connection.setRequestMethod("GET");			
 			
 			List<Producto> productos = mapper.readValue(connection.getInputStream(), new TypeReference<List<Producto>>() {});
+			
+			for(Producto producto: productos) {
+				producto.setProveedor(
+						proveedores.stream()
+						.filter(p -> p.getNit() == producto.getNitProveedor())
+						.findFirst()
+						.get());
+			}
+			
 			connection.disconnect();
 			return productos;			
 			

@@ -1,5 +1,6 @@
+<%@page import="com.dmaktech.productos.Producto"%>
 <%@page import="java.util.List"%>
-<%@page import="com.dmaktech.usuarios.Usuario"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -48,7 +49,11 @@
             </div>
             <div>
                 <div class="barra">
-                    <span>Buscar:</span> <input class="cajaBuscar" type="text" placeholder="Ingrese cod. de prodcuto" > <input class="botonBuscar" type="submit" value="&#128270;">
+                	<form action="./productos" method="GET">
+						<label for="codigoBuscado">Buscar:</label>
+						<input class="cajaBuscar" type="text" placeholder="Ingrese cod. de producto" name="codigoBuscado">
+						<button class="botonBuscar" name="accion" value="buscar">&#128270;</button>		
+					</form>
                 </div>
             </div>
             
@@ -62,26 +67,29 @@
                         <th>Nombre</th>
                         <th>IVA</th>
                         <th>Proveedor</th>
-                        <th>costo</th>
+                        <th>Costo</th>
                         <th>Precio</th>
                         <th></th>
                         <th></th>
                     </tr>
                 </thead>
-                <tr>
-                    <td>242</td>
-                    <td>Fresa</td>
-                    <td>5%</td>
-                    <td>Carulla</td>
-                    <td>500</td>
-                    <td>1500</td>
-                    <td><input class="boton" type="submit" value="Editar"></td>
-                    <td><input class="redbuton" type="submit" value="X"></td>
-                </tr>
+                <tbody>
+                	<% List<Producto> productos = (List<Producto>) request.getAttribute("productos"); %>
+					<c:forEach items="${productos}" var="producto">
+						<tr>
+							<td>${producto.getCodigo()}</td>
+							<td>${producto.getNombre()}</td>
+							<td>${producto.getIva()}%</td>
+							<td>${producto.getProveedor().getNombre()}</td>
+							<td>${producto.getPrecioCompra()}</td>
+							<td>${producto.getPrecioVenta()}</td>
+							<td><input class="boton boton-editar" type="submit" value="Editar"></td>
+							<td><a href="productos?accion=borrar&codigo=${producto.getCodigo()}">X</a></td>
+						</tr>
+					</c:forEach>              
+                </tbody>
             </table>
-        </section>
-
-        
+        </section>        
     </div>
 </body>
 </html>
