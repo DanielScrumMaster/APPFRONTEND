@@ -33,11 +33,11 @@
 
                     <div class="caja">
                         <input class="cajaTexto" type="text" name="email"><br><br>
-                        <input class="botonAgregar" type="submit" name="crear" value="Cargar">
+                        <input class="boton1" type="submit" name="crear" value="Cargar">
                     </div>
 
                     <div class="caja">
-                        <input class="botonAgregar" type="submit" name="crear" value="Examinar">
+                        <input class="boton1" type="submit" name="crear" value="Examinar">
                     </div>
                 </div>
             </form>
