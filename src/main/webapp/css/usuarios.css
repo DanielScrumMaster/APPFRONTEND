@@ -81,6 +81,7 @@ h2{
     max-height: 190px;
     text-align: center;
     margin-bottom: 30px;
+    min-height: 170px;
 }
 .agregar{
     margin: 20;
@@ -146,6 +147,10 @@ h2{
 }
 .texto{
     font-size: 18px;
+}
+.minigrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .minigrid div{
     padding-left: 6%;
