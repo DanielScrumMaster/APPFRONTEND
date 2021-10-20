@@ -73,6 +73,15 @@ h2{
     Grid-template-columns: 1fr 1fr;
 
 }
+.productos{
+    margin-top: 2%;
+    background-color: rgba(255, 255, 255, .70);
+    color: #000;
+    border-radius: 30px;
+    max-height: 190px;
+    text-align: center;
+    margin-bottom: 30px;
+}
 .agregar{
     margin: 20;
     Height: 100vh;
