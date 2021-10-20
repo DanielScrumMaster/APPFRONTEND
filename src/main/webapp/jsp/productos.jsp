@@ -14,33 +14,74 @@
 </head>
 <body>
 	<header class="lista">
-		<%@include file="./menu.jsp"%>
-	</header>
-	<div class="contenedor">
-		<section class="bott">
+        
+            <%@include file="./menu.jsp"%>
+        
+    </header>
+    <div class="contenedor">
+        <section class="Productos">
             <div class="titulo">
                 <h2>Agregar Productos</h2>
             </div>
-            <form action="./usuarios" method="post">
+            
+            <form action="../usuarios" method="post">
 
-                <div class="contenedorProductos">
-                    <div >
-                        <label class="texto" id="nombreArchivo">Nombre  del Archivo:</label>
+                <div class="minigrid">
+                    <div class="caja">
+                        <label class="texto" for="cedula">Nombre del Archivo</label><br>    
                     </div>
 
-                    <div class="cargarArchivo">
-                        <br><br>
-                        <input class="cajaTexto" type="text" >
-                        <br><br><br>
-                        <input class="boton3" type="submit" value="Cargar">
+                    <div class="caja">
+                        <input class="cajaTexto" type="text" name="email"><br><br>
+                        <input class="botonAgregar" type="submit" name="crear" value="Cargar">
                     </div>
 
-                    <div>
-                        <input class="boton2" type="submit" value="Examinar">
+                    <div class="caja">
+                        <input class="botonAgregar" type="submit" name="crear" value="Examinar">
                     </div>
                 </div>
             </form>
         </section>
-	</div>
+        <section class="top">
+            <div>
+                <input class="botonNuevoUsuario" type="submit" name="crear" value="Ver Productos">
+            </div>
+            <div>
+                <div class="barra">
+                    <span>Buscar:</span> <input class="cajaBuscar" type="text" placeholder="Ingrese cod. de prodcuto" > <input class="botonBuscar" type="submit" value="&#128270;">
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="mid">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>IVA</th>
+                        <th>Proveedor</th>
+                        <th>costo</th>
+                        <th>Precio</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>242</td>
+                    <td>Fresa</td>
+                    <td>5%</td>
+                    <td>Carulla</td>
+                    <td>500</td>
+                    <td>1500</td>
+                    <td><input class="boton" type="submit" value="Editar"></td>
+                    <td><input class="redbuton" type="submit" value="X"></td>
+                </tr>
+            </table>
+        </section>
+
+        
+    </div>
 </body>
 </html>
