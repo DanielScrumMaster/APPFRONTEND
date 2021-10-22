@@ -53,50 +53,58 @@
                             <th>Nombre Producto</th>
                             <th>Cant.</th>
                             <th>Valor <br> Total</th>
+							<th></th>
                         </tr>
                     </thead>
                     <tr>
 						<td> <input class="cajaTexto" type="text"> </td>
 						<td> <input class="boton"type="submit" value="Consultar" > </td>
+						<td> <label class="tablaVentas">Fresas</label> </td>
 						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
+						<td> <label class="tablaVentas">$1600</label> </td>
+						<td> <input class="redbuton" type="submit" value="X"></td>
                     </tr>
 					<tr>
 						<td> <input class="cajaTexto" type="text"> </td>
 						<td> <input class="boton"type="submit" value="Consultar" > </td>
+						<td> <label class="tablaVentas">Fresas</label> </td>
 						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
+						<td> <label class="tablaVentas">$1600</label> </td>
+						<td> <input class="redbuton" type="submit" value="X"></td>
                     </tr>
 					<tr>
 						<td> <input class="cajaTexto" type="text"> </td>
 						<td> <input class="boton"type="submit" value="Consultar" > </td>
+						<td> <label class="tablaVentas">Fresas</label> </td>
 						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
+						<td> <label class="tablaVentas">$1600</label> </td>
+						<td> <input class="redbuton" type="submit" value="X"></td>
                     </tr>
 					<tr>
 						<td> <input class="cajaTexto" type="text"> </td>
 						<td> <input class="boton"type="submit" value="Consultar" > </td>
+						<td> <label class="tablaVentas">Fresas</label> </td>
 						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
+						<td> <label class="tablaVentas">$1600</label> </td>
+						<td> <input class="redbuton" type="submit" value="X"></td>
                     </tr>
 					<tr>
 						<td> <input class="cajaTexto" type="text"> </td>
 						<td> <input class="boton"type="submit" value="Consultar" > </td>
+						<td> <label class="tablaVentas">Fresas</label> </td>
 						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
+						<td> <label class="tablaVentas">$1600</label> </td>
+						<td> <input class="redbuton" type="submit" value="X"></td>
                     </tr>
 					<tr>
 						<td> <input class="cajaTexto" type="text"> </td>
 						<td> <input class="boton"type="submit" value="Consultar" > </td>
+						<td> <label class="tablaVentas">Fresas</label> </td>
 						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
+						<td> <label class="tablaVentas">$1600</label> </td>
+						<td> <input class="redbuton" type="submit" value="X"></td>
                     </tr>
+					
                 </table>
             </section>
 			<section>
