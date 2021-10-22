@@ -29,3 +29,8 @@ th{
     grid-gap: 20px;   
     Grid-template-columns: 3fr 1fr 1fr;
 }
+label {
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+}
