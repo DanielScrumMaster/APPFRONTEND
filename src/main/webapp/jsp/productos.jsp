@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="caja">
-                        <input class="boton1" type="submit" name="crear" value="Examinar">
+                        <input class="boton1" type="file" name="" value="Elegir Archivo" acept=".csv">
                     </div>
                 </div>
             </form>
