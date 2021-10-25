@@ -6,12 +6,13 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<title>Ventas</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, user-scalable=0,initial-scale=1.0, maximum-scale=1.0,minimun-scale=1.0">
-	<link rel="stylesheet" href="./css/usuarios.css">
-    <link rel="stylesheet" href="./css/ventas.css">
-<title>Ventas</title>
+<link rel="stylesheet" href="./css/usuarios.css">
+<link rel="stylesheet" href="./css/ventas.css">
+<script src="./js/ventas.js" defer></script>	
 </head>
 <body>
 	<header class="lista">
@@ -29,7 +30,7 @@
                     <div class="agregar">
                         <div class="caja">
                             <br><br>
-                            <input class="cajaTexto" type="text" placeholder="Cédula" ><br><br>
+                            <input class="cajaTexto" type="text" placeholder="Cédula"><br><br>
                             <label class="texto">Cliente</label><br><br>
                             <label class="texto">Codigo</label>
                         </div>
@@ -55,48 +56,50 @@
                             <th>Valor <br> Total</th>
                         </tr>
                     </thead>
-                    <tr>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="boton"type="submit" value="Consultar" > </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-                    </tr>
-					<tr>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="boton"type="submit" value="Consultar" > </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-                    </tr>
-					<tr>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="boton"type="submit" value="Consultar" > </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-                    </tr>
-					<tr>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="boton"type="submit" value="Consultar" > </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-                    </tr>
-					<tr>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="boton"type="submit" value="Consultar" > </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-                    </tr>
-					<tr>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="boton"type="submit" value="Consultar" > </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-						<td> <input class="cajaTexto" type="text"> </td>
-                    </tr>
+                    <tbody id="listaProductos">            
+	                    <tr>
+							<td> <input class="cajaTexto" type="text"> </td>
+							<td> <input class="boton btn-consultar"type="submit" value="Consultar"> </td>
+							<td> </td>
+							<td> <input class="cajaTexto" type="number" value="0" min=1 disabled> </td>
+							<td> </td>
+	                    </tr>
+						<tr>
+							<td> <input class="cajaTexto" type="text"> </td>
+							<td> <input class="boton btn-consultar"type="submit" value="Consultar"> </td>
+							<td> </td>
+							<td> <input class="cajaTexto" type="number" value="0" min=1 disabled> </td>
+							<td> </td>
+	                    </tr>
+						<tr>
+							<td> <input class="cajaTexto" type="text"> </td>
+							<td> <input class="boton btn-consultar"type="submit" value="Consultar"> </td>
+							<td> </td>
+							<td> <input class="cajaTexto" type="number" value="0" min=1 disabled> </td>
+							<td> </td>
+	                    </tr>
+						<tr>
+							<td> <input class="cajaTexto" type="text"> </td>
+							<td> <input class="boton btn-consultar"type="submit" value="Consultar"> </td>
+							<td> </td>
+							<td> <input class="cajaTexto" type="number" value="0" min=1 disabled> </td>
+							<td> </td>
+	                    </tr>
+						<tr>
+							<td> <input class="cajaTexto" type="text"> </td>
+							<td> <input class="boton btn-consultar"type="submit" value="Consultar"> </td>
+							<td> </td>
+							<td> <input class="cajaTexto" type="number" value="0" min=1 disabled> </td>
+							<td> </td>
+	                    </tr>
+						<tr>
+							<td> <input class="cajaTexto" type="text"> </td>
+							<td> <input class="boton btn-consultar"type="submit" value="Consultar"> </td>
+							<td> </td>
+							<td> <input class="cajaTexto" type="number" value="0" min=1 disabled> </td>
+							<td> </td>
+	                    </tr>
+                    </tbody>
                 </table>
             </section>
 			<section>
@@ -122,9 +125,9 @@
 							<label class="texto" >Total con IVA</label>
 						</div>
 						<div>
-							<input class="cajaTexto" type="text"><br><br>
-							<input class="cajaTexto" type="text"><br><br>
-							<input class="cajaTexto" type="text"><br><br>
+							<input class="cajaTexto" type="text" name="subtotal" id="subtotal" value="0"><br><br>
+							<input class="cajaTexto" type="text" name="iva" id="totalIva"><br><br>
+							<input class="cajaTexto" type="text" name="total" id="total"><br><br>
 						</div>
 					</div>
 				</form>
@@ -137,6 +140,7 @@
 			</div>
 		</section>
 		
-	</div>
+	</div>	
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

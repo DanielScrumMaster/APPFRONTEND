@@ -21,7 +21,7 @@
 						<li><a href="./proveedores">Proveedores</a></li>
 						<li><a href="./productos">Productos</a></li>
 						<li><a href="./ventas">Ventas</a></li>
-						<li><a href="#">Reportes</a></li>
+						<li><a href="./reportes">Reportes</a></li>
 					</ul>
 				</nav>
 			</div>

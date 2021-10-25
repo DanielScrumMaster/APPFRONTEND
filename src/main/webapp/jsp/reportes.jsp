@@ -1,18 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
- <link rel="stylesheet" href="../css/reportes.css">
-<meta charset="ISO-8859-1">
+ <link rel="stylesheet" href="./css/reportes.css">
+<meta charset="UTF-8">
 <title>Reportes</title>
 </head>
 <body>
+	<header class="lista">
+		<%@include file="./menu.jsp"%>
+	</header>
 	<div class="contenedor">
         <form>
             <input class="boton" type="submit" value="Listado de Usuarios"><br><br><br>
             <input class="boton" type="submit" value="Listado de Clientes"><br><br><br>
-            <input class="boton" type="submit" value="Vnetas por Cliente"> 
+            <input class="boton" type="submit" value="Ventas por Cliente"> 
         </form>
     </div>
     <div class="contenedor">
