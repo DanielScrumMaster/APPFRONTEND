@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/menu.css">
 </head>
 <body>
-	<section>
+	<section class="menuPrincipal">
 		<div class="grid">
 			<div class="logo">
 				<img src="imagenes/logo.png" alt="Logo">
